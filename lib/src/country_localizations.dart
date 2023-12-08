@@ -28,6 +28,7 @@ import 'res/strings/ru.dart';
 import 'res/strings/tr.dart';
 import 'res/strings/tw.dart';
 import 'res/strings/uk.dart';
+import 'res/strings/vi.dart';
 
 class CountryLocalizations {
   final Locale locale;
@@ -106,14 +107,16 @@ class CountryLocalizations {
         return nl[countryCode];
       case 'it':
         return it[countryCode];
-      case 'ko':
+      case 'kr':
         return ko[countryCode];
-      case 'ja':
+      case 'jp':
         return ja[countryCode];
       case 'id':
         return id[countryCode];
       case 'cs':
         return cs[countryCode];
+      case 'vn':
+        return vi[countryCode];
       case 'en':
       default:
         return en[countryCode];
@@ -155,6 +158,7 @@ class _CountryLocalizationsDelegate
       'ja',
       'id',
       'cs',
+      'vi',
     ].contains(locale.languageCode);
   }
 

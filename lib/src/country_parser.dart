@@ -29,6 +29,7 @@ import 'res/strings/ru.dart';
 import 'res/strings/tr.dart';
 import 'res/strings/tw.dart';
 import 'res/strings/uk.dart';
+import 'res/strings/vi.dart';
 
 /// Used to parse simple string representations of countries, commonly used in
 /// databases and other forms of storage, to a Country object.
@@ -260,14 +261,16 @@ class CountryParser {
         return nl;
       case 'it':
         return it;
-      case 'ja':
+      case 'jp':
         return ja;
       case 'id':
         return id;
-      case 'ko':
+      case 'kr':
         return ko;
       case 'cs':
         return cs;
+      case 'vn':
+        return vi;
       case 'en':
       default:
         return en;
@@ -306,6 +309,7 @@ class CountryParser {
       const Locale('ja'),
       const Locale('ko'),
       const Locale('cs'),
+      const Locale('vi'),
       const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'),
       const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'),
     ]..removeWhere((Locale l) => exclude.contains(l));
