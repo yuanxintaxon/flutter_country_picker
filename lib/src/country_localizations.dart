@@ -3,6 +3,7 @@ import 'package:openim_common/openim_common.dart';
 
 import 'res/strings/ar.dart';
 import 'res/strings/cn.dart';
+import 'res/strings/cs.dart';
 import 'res/strings/de.dart';
 import 'res/strings/en.dart';
 import 'res/strings/es.dart';
@@ -101,7 +102,15 @@ class CountryLocalizations {
       case 'nl':
         return nl[key];
       case 'it':
-        return it[key];
+        return it[countryCode];
+      case 'ko':
+        return ko[countryCode];
+      case 'ja':
+        return ja[countryCode];
+      case 'id':
+        return id[countryCode];
+      case 'cs':
+        return cs[countryCode];
       case 'en':
       default:
         return en[key];
@@ -139,6 +148,10 @@ class _CountryLocalizationsDelegate
       'lv',
       'nl',
       'it',
+      'ko',
+      'ja',
+      'id',
+      'cs',
     ].contains(locale.languageCode);
   }
 
