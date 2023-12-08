@@ -2,7 +2,7 @@
 
 [![pub package](https://img.shields.io/pub/v/country_picker.svg)](https://pub.dev/packages/country_picker)
 
-[Forked Repo]
+[Forked Repository]
 
 A flutter package to select a country from a list of countries. 
 
