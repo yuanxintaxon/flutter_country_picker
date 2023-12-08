@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:openim_common/openim_common.dart';
 
 import 'res/strings/ar.dart';
 import 'res/strings/cn.dart';
@@ -9,10 +10,7 @@ import 'res/strings/et.dart';
 import 'res/strings/fr.dart';
 import 'res/strings/gr.dart';
 import 'res/strings/hr.dart';
-import 'res/strings/id.dart';
 import 'res/strings/it.dart';
-import 'res/strings/ja.dart';
-import 'res/strings/ko.dart';
 import 'res/strings/ku.dart';
 import 'res/strings/lt.dart';
 import 'res/strings/lv.dart';
@@ -42,7 +40,7 @@ class CountryLocalizations {
   /// written in terms of this method. For example:
   ///
   /// ```dart
-  /// CountryLocalizations.of(context).countryName(countryCode: country.countryCode),
+  /// CountryLocalizations.of(context).countryName(key: country.key),
   /// ```
   static CountryLocalizations? of(BuildContext context) {
     return Localizations.of<CountryLocalizations>(
@@ -53,74 +51,66 @@ class CountryLocalizations {
 
   /// A [LocalizationsDelegate] that uses [_CountryLocalizationsDelegate.load]
   /// to create an instance of this class.
-  static const LocalizationsDelegate<CountryLocalizations> delegate = _CountryLocalizationsDelegate();
+  static const LocalizationsDelegate<CountryLocalizations> delegate =
+      _CountryLocalizationsDelegate();
 
   /// The localized country name for the given country code.
-  String? countryName({required String countryCode}) {
-    switch (locale.languageCode) {
-      case 'zh':
-        switch (locale.scriptCode) {
-          case 'Hant':
-            return tw[countryCode];
-          case 'Hans':
-          default:
-            return cn[countryCode];
-        }
+  String? countryName({required String key}) {
+    switch (locale.countryCode?.toLowerCase()) {
+      case 'cn':
+        return cn[key];
+      case 'tw':
+        return tw[key];
       case 'el':
-        return gr[countryCode];
+        return gr[key];
       case 'es':
-        return es[countryCode];
+        return es[key];
       case 'et':
-        return et[countryCode];
+        return et[key];
       case 'pt':
-        return pt[countryCode];
+        return pt[key];
       case 'nb':
-        return nb[countryCode];
+        return nb[key];
       case 'nn':
-        return nn[countryCode];
+        return nn[key];
       case 'uk':
-        return uk[countryCode];
+        return uk[key];
       case 'pl':
-        return pl[countryCode];
+        return pl[key];
       case 'tr':
-        return tr[countryCode];
+        return tr[key];
       case 'ru':
-        return ru[countryCode];
+        return ru[key];
       case 'hi':
       case 'ne':
-        return np[countryCode];
+        return np[key];
       case 'ar':
-        return ar[countryCode];
+        return ar[key];
       case 'ku':
-        return ku[countryCode];
+        return ku[key];
       case 'hr':
-        return hr[countryCode];
+        return hr[key];
       case 'fr':
-        return fr[countryCode];
+        return fr[key];
       case 'de':
-        return de[countryCode];
+        return de[key];
       case 'lv':
-        return lv[countryCode];
+        return lv[key];
       case 'lt':
-        return lt[countryCode];
+        return lt[key];
       case 'nl':
-        return nl[countryCode];
+        return nl[key];
       case 'it':
-        return it[countryCode];
-      case 'ko':
-        return ko[countryCode];
-      case 'ja':
-        return ja[countryCode];
-      case 'id':
-        return id[countryCode];
+        return it[key];
       case 'en':
       default:
-        return en[countryCode];
+        return en[key];
     }
   }
 }
 
-class _CountryLocalizationsDelegate extends LocalizationsDelegate<CountryLocalizations> {
+class _CountryLocalizationsDelegate
+    extends LocalizationsDelegate<CountryLocalizations> {
   const _CountryLocalizationsDelegate();
 
   @override
@@ -149,9 +139,6 @@ class _CountryLocalizationsDelegate extends LocalizationsDelegate<CountryLocaliz
       'lv',
       'nl',
       'it',
-      'ko',
-      'ja',
-      'id',
     ].contains(locale.languageCode);
   }
 
