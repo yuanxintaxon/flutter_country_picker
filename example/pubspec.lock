@@ -606,7 +606,7 @@ packages:
   flutter_openim_sdk:
     dependency: transitive
     description:
-      path: "../../../../flutter_openim_sdk"
+      path: "../../../flutter_openim_sdk"
       relative: true
     source: path
     version: "3.4.0-e-v1.1.3"
@@ -1119,7 +1119,7 @@ packages:
   openim_common:
     dependency: transitive
     description:
-      path: "../../.."
+      path: "../../../openim_common"
       relative: true
     source: path
     version: "0.0.1"

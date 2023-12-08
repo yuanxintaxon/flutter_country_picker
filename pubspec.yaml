@@ -17,7 +17,7 @@ dependencies:
   geolocator: ^10.1.0
   lpinyin: ^2.0.3
   openim_common:
-    path: ../../../openim_common
+    path: ../../openim_common
 
 
 flutter:
