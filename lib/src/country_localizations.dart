@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:openim_common/openim_common.dart';
 
 import 'res/strings/ar.dart';
 import 'res/strings/cn.dart';
+import 'res/strings/cs.dart';
 import 'res/strings/de.dart';
 import 'res/strings/en.dart';
 import 'res/strings/es.dart';
@@ -9,7 +11,10 @@ import 'res/strings/et.dart';
 import 'res/strings/fr.dart';
 import 'res/strings/gr.dart';
 import 'res/strings/hr.dart';
+import 'res/strings/id.dart';
 import 'res/strings/it.dart';
+import 'res/strings/ja.dart';
+import 'res/strings/ko.dart';
 import 'res/strings/ku.dart';
 import 'res/strings/lt.dart';
 import 'res/strings/lv.dart';
@@ -23,6 +28,7 @@ import 'res/strings/ru.dart';
 import 'res/strings/tr.dart';
 import 'res/strings/tw.dart';
 import 'res/strings/uk.dart';
+import 'res/strings/vi.dart';
 
 class CountryLocalizations {
   final Locale locale;
@@ -50,19 +56,16 @@ class CountryLocalizations {
 
   /// A [LocalizationsDelegate] that uses [_CountryLocalizationsDelegate.load]
   /// to create an instance of this class.
-  static const LocalizationsDelegate<CountryLocalizations> delegate = _CountryLocalizationsDelegate();
+  static const LocalizationsDelegate<CountryLocalizations> delegate =
+      _CountryLocalizationsDelegate();
 
   /// The localized country name for the given country code.
   String? countryName({required String countryCode}) {
-    switch (locale.languageCode) {
-      case 'zh':
-        switch (locale.scriptCode) {
-          case 'Hant':
-            return tw[countryCode];
-          case 'Hans':
-          default:
-            return cn[countryCode];
-        }
+    switch (locale.countryCode?.toLowerCase()) {
+      case 'cn':
+        return cn[countryCode];
+      case 'tw':
+        return tw[countryCode];
       case 'el':
         return gr[countryCode];
       case 'es':
@@ -104,6 +107,16 @@ class CountryLocalizations {
         return nl[countryCode];
       case 'it':
         return it[countryCode];
+      case 'kr':
+        return ko[countryCode];
+      case 'jp':
+        return ja[countryCode];
+      case 'id':
+        return id[countryCode];
+      case 'cs':
+        return cs[countryCode];
+      case 'vn':
+        return vi[countryCode];
       case 'en':
       default:
         return en[countryCode];
@@ -111,7 +124,8 @@ class CountryLocalizations {
   }
 }
 
-class _CountryLocalizationsDelegate extends LocalizationsDelegate<CountryLocalizations> {
+class _CountryLocalizationsDelegate
+    extends LocalizationsDelegate<CountryLocalizations> {
   const _CountryLocalizationsDelegate();
 
   @override
@@ -140,6 +154,11 @@ class _CountryLocalizationsDelegate extends LocalizationsDelegate<CountryLocaliz
       'lv',
       'nl',
       'it',
+      'ko',
+      'ja',
+      'id',
+      'cs',
+      'vi',
     ].contains(locale.languageCode);
   }
 
