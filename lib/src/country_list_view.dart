@@ -141,9 +141,9 @@ class _CountryListViewState extends State<CountryListView> {
         _filteredList = List.from(countries)
           ..sort((a, b) {
             final localizedCountryNameA = CountryLocalizations.of(context)
-                ?.countryName(key: a.countryCode);
+                ?.countryName(countryCode: a.countryCode);
             final localizedCountryNameB = CountryLocalizations.of(context)
-                ?.countryName(key: b.countryCode);
+                ?.countryName(countryCode: b.countryCode);
 
             // Logger.print("Short Pinyin A: $localizedCountryNameA");
             // Logger.print("Short Pinyin B: $localizedCountryNameB");
@@ -282,7 +282,7 @@ class _CountryListViewState extends State<CountryListView> {
                 children: <Widget>[
                   Expanded(
                     child: (CountryLocalizations.of(context)
-                                ?.countryName(key: country.countryCode)
+                                ?.countryName(countryCode: country.countryCode)
                                 ?.replaceAll(RegExp(r"\s+"), " ") ??
                             country.name)
                         .toText
@@ -351,7 +351,7 @@ class _CountryListViewState extends State<CountryListView> {
 
   void selectCountry(Country country) {
     country.nameLocalized = CountryLocalizations.of(context)
-        ?.countryName(key: country.countryCode)
+        ?.countryName(countryCode: country.countryCode)
         ?.replaceAll(RegExp(r"\s+"), " ");
     widget.onSelect(country);
     Navigator.pop(context);
@@ -367,7 +367,7 @@ class _CountryListViewState extends State<CountryListView> {
 
     if (country != null) {
       country.nameLocalized = CountryLocalizations.of(context)
-          ?.countryName(key: country.countryCode)
+          ?.countryName(countryCode: country.countryCode)
           ?.replaceAll(RegExp(r"\s+"), " ");
       widget.onSelect(country);
     }
@@ -432,7 +432,7 @@ class _CountryListViewState extends State<CountryListView> {
     } catch (error, stack) {
       final String timeOutAlert = CountryLocalizations.of(
                   _scaffoldKey.currentContext!)
-              ?.countryName(key: 'timeoutAlert') ??
+              ?.countryName(countryCode: 'timeoutAlert') ??
           'Could not find your location. Please check your connection and try again.';
       Logger.print('$error $stack');
       IMViews.showToast(timeOutAlert);

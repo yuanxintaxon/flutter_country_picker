@@ -11,7 +11,10 @@ import 'res/strings/et.dart';
 import 'res/strings/fr.dart';
 import 'res/strings/gr.dart';
 import 'res/strings/hr.dart';
+import 'res/strings/id.dart';
 import 'res/strings/it.dart';
+import 'res/strings/ja.dart';
+import 'res/strings/ko.dart';
 import 'res/strings/ku.dart';
 import 'res/strings/lt.dart';
 import 'res/strings/lv.dart';
@@ -41,7 +44,7 @@ class CountryLocalizations {
   /// written in terms of this method. For example:
   ///
   /// ```dart
-  /// CountryLocalizations.of(context).countryName(key: country.key),
+  /// CountryLocalizations.of(context).countryName(countryCode: country.countryCode),
   /// ```
   static CountryLocalizations? of(BuildContext context) {
     return Localizations.of<CountryLocalizations>(
@@ -56,51 +59,51 @@ class CountryLocalizations {
       _CountryLocalizationsDelegate();
 
   /// The localized country name for the given country code.
-  String? countryName({required String key}) {
+  String? countryName({required String countryCode}) {
     switch (locale.countryCode?.toLowerCase()) {
       case 'cn':
-        return cn[key];
+        return cn[countryCode];
       case 'tw':
-        return tw[key];
+        return tw[countryCode];
       case 'el':
-        return gr[key];
+        return gr[countryCode];
       case 'es':
-        return es[key];
+        return es[countryCode];
       case 'et':
-        return et[key];
+        return et[countryCode];
       case 'pt':
-        return pt[key];
+        return pt[countryCode];
       case 'nb':
-        return nb[key];
+        return nb[countryCode];
       case 'nn':
-        return nn[key];
+        return nn[countryCode];
       case 'uk':
-        return uk[key];
+        return uk[countryCode];
       case 'pl':
-        return pl[key];
+        return pl[countryCode];
       case 'tr':
-        return tr[key];
+        return tr[countryCode];
       case 'ru':
-        return ru[key];
+        return ru[countryCode];
       case 'hi':
       case 'ne':
-        return np[key];
+        return np[countryCode];
       case 'ar':
-        return ar[key];
+        return ar[countryCode];
       case 'ku':
-        return ku[key];
+        return ku[countryCode];
       case 'hr':
-        return hr[key];
+        return hr[countryCode];
       case 'fr':
-        return fr[key];
+        return fr[countryCode];
       case 'de':
-        return de[key];
+        return de[countryCode];
       case 'lv':
-        return lv[key];
+        return lv[countryCode];
       case 'lt':
-        return lt[key];
+        return lt[countryCode];
       case 'nl':
-        return nl[key];
+        return nl[countryCode];
       case 'it':
         return it[countryCode];
       case 'ko':
@@ -113,7 +116,7 @@ class CountryLocalizations {
         return cs[countryCode];
       case 'en':
       default:
-        return en[key];
+        return en[countryCode];
     }
   }
 }

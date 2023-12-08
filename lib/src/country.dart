@@ -57,7 +57,7 @@ class Country {
 
   String? getTranslatedName(BuildContext context) {
     return CountryLocalizations.of(context)
-        ?.countryName(key: countryCode);
+        ?.countryName(countryCode: countryCode);
   }
 
   Country({
@@ -129,7 +129,7 @@ class Country {
         name.toLowerCase().startsWith(_query.toLowerCase()) ||
         countryCode.toLowerCase().startsWith(_query.toLowerCase()) ||
         (localizations
-                ?.countryName(key: countryCode)
+                ?.countryName(countryCode: countryCode)
                 ?.toLowerCase()
                 .startsWith(_query.toLowerCase()) ??
             false);
