@@ -1,6 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:universal_io/io.dart';
 
 import 'country.dart';
 import 'country_list_theme_data.dart';
